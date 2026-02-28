@@ -17,8 +17,8 @@ async function fetchMovies(query: string): Promise<Movie[]> {
     },
   };
 
-  const responce = await axios.get<FetchMoviesResponse>(BASE_URL, params);
-  return responce.data.results;
+  const response = await axios.get<FetchMoviesResponse>(BASE_URL, params);
+  return response.data.results;
 }
 
 export default fetchMovies;

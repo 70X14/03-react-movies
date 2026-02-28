@@ -18,11 +18,12 @@ function App() {
   const handlerSearch = async (query: string) => {
     setMovies([]);
     setLoading(true);
+    setError(false);
 
     try {
       const movies = await fetchMovies(query);
 
-      if (movies.length < 0) {
+      if (movies.length === 0) {
         toast.error('No movies found for your request.');
         return;
       }
